@@ -13,11 +13,13 @@
         'product',
         'sale',
         'product_style_concept',
+        'product_rejected',
     ],
     'data': [
         'security/ir.model.access.csv',
         'views/product_rotation_view.xml',
         'views/product_view.xml',
+        'wizard/calculate_product_rotation_view.xml',
     ],
     'installable': True,
     'auto_install': False
