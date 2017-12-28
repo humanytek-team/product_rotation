@@ -12,6 +12,7 @@
     'depends': [
         'product',
         'sale',
+        'product_style_concept',
     ],
     'data': [
         'security/ir.model.access.csv',
