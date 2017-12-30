@@ -1,0 +1,238 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_rotation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e-20170815\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-30 09:38+0000\n"
+"PO-Revision-Date: 2017-12-30 05:46-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#. module: product_rotation
+#: model:ir.actions.act_window,name:product_rotation.action_calculate_product_rotation
+#: model:ir.ui.menu,name:product_rotation.menu_calculate_product_rotation
+msgid "Calculate Products Rotation"
+msgstr "Calcular rotación"
+
+#. module: product_rotation
+#: model:ir.ui.view,arch_db:product_rotation.calculate_product_rotation_form
+msgid "Calculate products rotation"
+msgstr "Calcular rotación"
+
+#. module: product_rotation
+#: model:ir.ui.view,arch_db:product_rotation.calculate_product_rotation_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_company_id
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_concept_id
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_concept_id
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_create_uid
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_create_uid
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_create_date
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_create_date
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_product_current_rotation
+msgid "Current Rotation"
+msgstr "Rotación Actual"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_demand
+msgid "Demand"
+msgstr "Demanda"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_display_name
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_display_name
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_display_name
+msgid "Display Name"
+msgstr "Nombre desplegado"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_end_date
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_end_date
+msgid "End date of calculation"
+msgstr "Fecha final"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_id
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_id
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_rotation
+#: model:ir.ui.view,arch_db:product_rotation.calculate_product_rotation_form
+msgid "Indicate the start date and end date from which the products rotation is to be calculated"
+msgstr "Indique el rango de fechas para el cual desea calcular la rotación"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation___last_update
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation___last_update
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter___last_update
+msgid "Last Modified on"
+msgstr "Ultima modificacion realizada"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_write_uid
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_write_uid
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualizacion por"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_write_date
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_write_date
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización realizada"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_limit_lower
+msgid "Limit Lower (percentage)"
+msgstr "Limite inferior (porcentaje)"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_limit_upper
+msgid "Limit Upper (percentage)"
+msgstr "Limite Superior (porcentaje)"
+
+#. module: product_rotation
+#: model:ir.actions.act_window,name:product_rotation.action_product_rotation_parameter
+#: model:ir.ui.menu,name:product_rotation.menu_product_rotation_parameter
+msgid "Parameters for Products Rotation"
+msgstr "Parámetros para Rotación de Productos"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_participation
+msgid "Participation (percentage)"
+msgstr "Participación (porcentaje)"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_percentage_denied
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_percentage_denied
+msgid "Percentage denied"
+msgstr "Porcentaje de negados"
+
+#. module: product_rotation
+#: model:ir.model,name:product_rotation.model_product_product
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: product_rotation
+#: model:ir.ui.view,arch_db:product_rotation.product_normal_form_view_rotation
+msgid "Product Rotation"
+msgstr "Rotación de producto"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_product_rotation_history_ids
+msgid "Product Rotation History"
+msgstr "Histórico de Rotación"
+
+#. module: product_rotation
+#: code:addons/product_rotation/wizard/calculate_product_rotation.py:183
+#: model:ir.actions.act_window,name:product_rotation.action_product_rotation_wizard
+#, python-format
+msgid "Products Rotation"
+msgstr "Rotación de Productos"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_quantity_denied
+msgid "Quantity Denied"
+msgstr "Cantidad de Negados"
+
+#. module: product_rotation
+#: model:ir.actions.act_window,help:product_rotation.action_product_rotation_parameter
+msgid "Record a new value for the products rotation."
+msgstr "Registrar un nuevo valor para la rotación de productos"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_product_rotation_parameter_id
+msgid "Rotation"
+msgstr "Rotación"
+
+#. module: product_rotation
+#: model:ir.ui.view,arch_db:product_rotation.product_normal_form_view_rotation
+msgid "Rotation History"
+msgstr "Histórico de Rotación"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_rotation_rate
+msgid "Rotation Rate"
+msgstr "Porcentaje de Rotación"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_sales_quantity
+msgid "Sales Quantity"
+msgstr "Cantidad de ventas"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_start_date
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_start_date
+msgid "Start date of calculation"
+msgstr "Fecha Inicial"
+
+#. module: product_rotation
+#: model:ir.ui.view,arch_db:product_rotation.calculate_product_rotation_form
+msgid "This wizard lets calculate products rotation. You should indicates the date range, the company and percentage of denied to take into account for calculation."
+msgstr "Este asistente le ayuda a calcular la rotación de productos. Debe Indicar el rango de fechas, compania  y porcentaje de negados a tomar en cuenta en el calculo."
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_total_demand
+msgid "Total Demand"
+msgstr "Demanda Total"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_parameter_name
+#: model:ir.ui.view,arch_db:product_rotation.view_product_rotation_parameter_form
+msgid "Value"
+msgstr "Valor"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_product_rotation_wizard_hash
+msgid "Wizard Hash"
+msgstr "Wizard Hash"
+
+#. module: product_rotation
+#: model:ir.model,name:product_rotation.model_calculate_product_rotation
+msgid "calculate.product.rotation"
+msgstr "calculate.product.rotation"
+
+#. module: product_rotation
+#: model:ir.model,name:product_rotation.model_product_rotation
+msgid "product.rotation"
+msgstr "product.rotation"
+
+#. module: product_rotation
+#: model:ir.model,name:product_rotation.model_product_rotation_parameter
+msgid "product.rotation.parameter"
+msgstr "product.rotation.parameter"
