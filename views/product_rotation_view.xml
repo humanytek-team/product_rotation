@@ -58,5 +58,28 @@
           action="action_product_rotation_parameter"
           parent="product.prod_config_main"/>
 
+      <record id="view_product_rotation_tree" model="ir.ui.view">
+          <field name="name">product.rotation.tree</field>
+          <field name="model">product.rotation</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="product_id" />
+                  <field name="sales_quantity" />
+                  <field name="quantity_denied" />
+                  <field name="demand" />
+                  <field name="participation" />
+                  <field name="rotation_rate" />
+                  <field name="product_rotation_parameter_id" />
+              </tree>
+          </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="action_product_rotation_wizard">
+          <field name="name">Products Rotation</field>
+          <field name="res_model">product.rotation</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree</field>
+      </record>
+
     </data>
 </openerp>

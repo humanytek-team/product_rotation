@@ -16,6 +16,7 @@ class ProductRotationParameter(models.Model):
 class ProductRotation(models.Model):
     _name = 'product.rotation'
     _rec_name = 'product_rotation_parameter_id'
+    _order = 'rotation_rate'
 
     product_rotation_parameter_id = fields.Many2one(
         'product.rotation.parameter', 'Rotation', required=True)
@@ -27,14 +28,8 @@ class ProductRotation(models.Model):
     percentage_denied = fields.Float('Percentage denied', default=100)
     sales_quantity = fields.Float('Sales Quantity')
     quantity_denied = fields.Float('Quantity Denied')
-    demand = fields.Float('Demand', compute='_compute_demand')
+    demand = fields.Float('Demand')
     total_demand = fields.Float('Total Demand')
     participation = fields.Float('Participation (percentage)')
     rotation_rate = fields.Float('Rotation Rate')
-
-    @api.depends('sales_quantity', 'quantity_denied')
-    def _compute_demand(self):
-        """Compute value of field demand"""
-
-        for record in self:
-            record.demand = record.sales_quantity + quantity_denied
+    wizard_hash = fields.Char('Wizard Hash')
