@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_rotation_parameter_group_user,product.rotation.parameter.group.user,model_product_rotation_parameter,base.group_user,1,0,0,0

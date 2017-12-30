@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record id="calculate_product_rotation_form" model="ir.ui.view">
+      <field name="name">calculate.product.rotation.form</field>
+      <field name="model">calculate.product.rotation</field>
+      <field name="arch" type="xml">
+        <form>
+
+          <p class="oe_grey">
+       	    This wizard lets calculate products rotation. You should indicates the date range, the company and percentage of denied to take into account for calculation.
+       	  </p>
+
+          <div>
+
+            <group>
+              <field name="company_id" />
+              <field name="concept_id" />
+              <field name="percentage_denied" />
+            </group>
+
+            <h2>Indicate the start date and end date from which the products rotation is to be calculated</h2>
+            <group>
+              <group>
+                <field name="start_date" />
+              </group>
+              <group>
+                <field name="end_date" />
+              </group>
+            </group>
+
+          </div>
+
+          <footer>
+
+      	    <button
+              string="Calculate products rotation"
+              name="calculate_products_rotation"
+              type="object"
+              default_focus="1"
+              class="oe_highlight"/>
+
+      	    <button string="Cancel" class="oe_link" special="cancel"/>
+      	  </footer>
+
+        </form>
+
+      </field>
+
+    </record>
+
+    <record model="ir.actions.act_window" id="action_calculate_product_rotation">
+        <field name="name">Calculate Products Rotation</field>
+        <field name="res_model">calculate.product.rotation</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        name="Calculate Products Rotation"
+        id="menu_calculate_product_rotation"
+        action="action_calculate_product_rotation"
+        parent="base.menu_sales"/>
+
+  </data>
+</openerp>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+      <record id="product_normal_form_view_rotation" model="ir.ui.view">
+        <field name="name">product.product.form.rotation</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//notebook" position="inside">
+
+            <page string="Product Rotation">
+
+              <group>
+                <field name="current_rotation" />
+              </group>
+              
+              <separator string="Rotation History" />
+              <field name="rotation_history_ids" nolabel="1">
+                <tree>
+                  <field name="product_rotation_parameter_id" />
+                  <field name="start_date" />
+                  <field name="end_date" />
+                </tree>
+              </field>
+            </page>
+
+          </xpath>
+
+        </field>
+      </record>
+      
+    </data>
+</openerp>
