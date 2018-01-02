@@ -177,7 +177,12 @@ class CalculateProductRotation(models.TransientModel):
                 'product_rotation_parameter_id']
 
         for product_id in products_rotation:
+
             ProductRotation.create(products_rotation[product_id])
+
+            ProductProduct.browse(int(product_id)).write(
+                {'current_rotation': products_rotation[
+                    product_id]['product_rotation_parameter_id']})
 
         return {
             'name': _('Products Rotation'),
