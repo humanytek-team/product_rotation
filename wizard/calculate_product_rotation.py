@@ -8,9 +8,6 @@ import hashlib
 from openerp import api, fields, models, _
 from openerp.exceptions import ValidationError
 
-import logging
-_logger = logging.getLogger(__name__)
-
 
 class CalculateProductRotation(models.TransientModel):
     _name = 'calculate.product.rotation'
@@ -34,6 +31,7 @@ class CalculateProductRotation(models.TransientModel):
     company_id = fields.Many2one('res.company', 'Company')
     concept_id = fields.Many2one('product.style.concept', 'Concept')
     category_id = fields.Many2one('product.category', 'Category')
+    line_id = fields.Many2one('product.style.line', 'Line')
     percentage_denied = fields.Float('Percentage denied', default=100)
 
     @api.multi
@@ -61,9 +59,11 @@ class CalculateProductRotation(models.TransientModel):
             products_domain.append(
                 ('categ_id', '=', self.category_id.id))
 
+        if self.line_id:
+            products_domain.append(
+                ('product_style_line_id', '=', self.line_id.id))
+
         products = ProductProduct.search(products_domain)
-        _logger.debug('DEBUG PRODUCTS DOMAIN %s', products_domain)
-        _logger.debug('DEBUG PRODUCTS %s', products)
 
         domain_sales = [
             ('order_line.product_id.id', 'in', products.mapped('id')),
@@ -138,11 +138,8 @@ class CalculateProductRotation(models.TransientModel):
             raise ValidationError(
                 _('There was no demand for products in this period.'))
 
-        _logger.debug('DEBUG TOTAL DEMAND %s', total_demand)
         for product in products:
-            _logger.debug('DEBUG PRODUCT ID %s', product.id)
-            _logger.debug('DEBUG PRODUCT DEMAND %s',
-                          products_rotation[str(product.id)]['demand'])
+
             products_rotation[str(product.id)].update({
                 'total_demand': total_demand,
                 'participation': (

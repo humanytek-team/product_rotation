@@ -14,6 +14,7 @@
         'sale',
         'product_style_concept',
         'product_rejected',
+        'product_style_line',
     ],
     'data': [
         'security/ir.model.access.csv',

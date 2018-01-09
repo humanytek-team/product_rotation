@@ -17,7 +17,8 @@
             <group>
               <field name="company_id" />
               <field name="category_id" />
-              <field name="concept_id" />              
+              <field name="concept_id" />
+              <field name="line_id" />
               <field name="percentage_denied" />
             </group>
 
