@@ -6,6 +6,10 @@ from datetime import datetime, timedelta
 import hashlib
 
 from openerp import api, fields, models, _
+from openerp.exceptions import ValidationError
+
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class CalculateProductRotation(models.TransientModel):
@@ -29,6 +33,7 @@ class CalculateProductRotation(models.TransientModel):
                            required=True, default=_get_current_date)
     company_id = fields.Many2one('res.company', 'Company')
     concept_id = fields.Many2one('product.style.concept', 'Concept')
+    category_id = fields.Many2one('product.category', 'Category')
     percentage_denied = fields.Float('Percentage denied', default=100)
 
     @api.multi
@@ -46,11 +51,19 @@ class CalculateProductRotation(models.TransientModel):
         ProductRotationParameter = self.env['product.rotation.parameter']
         SaleOrder = self.env['sale.order']
 
+        products_domain = list()
+
         if self.concept_id:
-            products = ProductProduct.search(
-                [('product_style_concept_id', '=', self.concept_id.id)])
-        else:
-            products = ProductProduct.search([])
+            products_domain.append(
+                ('product_style_concept_id', '=', self.concept_id.id))
+
+        if self.category_id:
+            products_domain.append(
+                ('categ_id', '=', self.category_id.id))
+
+        products = ProductProduct.search(products_domain)
+        _logger.debug('DEBUG PRODUCTS DOMAIN %s', products_domain)
+        _logger.debug('DEBUG PRODUCTS %s', products)
 
         domain_sales = [
             ('order_line.product_id.id', 'in', products.mapped('id')),
@@ -121,8 +134,15 @@ class CalculateProductRotation(models.TransientModel):
         total_demand = float(sum([products_rotation[product_id]['demand']
                                   for product_id in products_rotation]))
 
-        for product in products:
+        if total_demand == 0:
+            raise ValidationError(
+                _('There was no demand for products in this period.'))
 
+        _logger.debug('DEBUG TOTAL DEMAND %s', total_demand)
+        for product in products:
+            _logger.debug('DEBUG PRODUCT ID %s', product.id)
+            _logger.debug('DEBUG PRODUCT DEMAND %s',
+                          products_rotation[str(product.id)]['demand'])
             products_rotation[str(product.id)].update({
                 'total_demand': total_demand,
                 'participation': (
