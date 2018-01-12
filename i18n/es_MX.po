@@ -1,21 +1,19 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* product_rotation
+#	* product_rotation
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0e-20170815\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-30 09:38+0000\n"
-"PO-Revision-Date: 2017-12-30 05:46-0400\n"
+"POT-Creation-Date: 2018-01-09 19:23+0000\n"
+"PO-Revision-Date: 2018-01-09 19:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: es_MX\n"
-"X-Generator: Poedit 1.8.11\n"
 
 #. module: product_rotation
 #: model:ir.actions.act_window,name:product_rotation.action_calculate_product_rotation
@@ -32,6 +30,11 @@ msgstr "Calcular rotación"
 #: model:ir.ui.view,arch_db:product_rotation.calculate_product_rotation_form
 msgid "Cancel"
 msgstr "Cancelar"
+
+#. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_category_id
+msgid "Category"
+msgstr "Categoría"
 
 #. module: product_rotation
 #: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_company_id
@@ -126,6 +129,11 @@ msgid "Limit Upper (percentage)"
 msgstr "Limite Superior (porcentaje)"
 
 #. module: product_rotation
+#: model:ir.model.fields,field_description:product_rotation.field_calculate_product_rotation_line_id
+msgid "Line"
+msgstr "Linea"
+
+#. module: product_rotation
 #: model:ir.actions.act_window,name:product_rotation.action_product_rotation_parameter
 #: model:ir.ui.menu,name:product_rotation.menu_product_rotation_parameter
 msgid "Parameters for Products Rotation"
@@ -159,7 +167,7 @@ msgid "Product Rotation History"
 msgstr "Histórico de Rotación"
 
 #. module: product_rotation
-#: code:addons/product_rotation/wizard/calculate_product_rotation.py:183
+#: code:addons/product_rotation/wizard/calculate_product_rotation.py:205
 #: model:ir.actions.act_window,name:product_rotation.action_product_rotation_wizard
 #, python-format
 msgid "Products Rotation"
@@ -202,6 +210,12 @@ msgid "Start date of calculation"
 msgstr "Fecha Inicial"
 
 #. module: product_rotation
+#: code:addons/product_rotation/wizard/calculate_product_rotation.py:139
+#, python-format
+msgid "There was no demand for products in this period."
+msgstr "No hubo demanda de productos en este periodo"
+
+#. module: product_rotation
 #: model:ir.ui.view,arch_db:product_rotation.calculate_product_rotation_form
 msgid "This wizard lets calculate products rotation. You should indicates the date range, the company and percentage of denied to take into account for calculation."
 msgstr "Este asistente le ayuda a calcular la rotación de productos. Debe Indicar el rango de fechas, compania  y porcentaje de negados a tomar en cuenta en el calculo."
@@ -236,3 +250,4 @@ msgstr "product.rotation"
 #: model:ir.model,name:product_rotation.model_product_rotation_parameter
 msgid "product.rotation.parameter"
 msgstr "product.rotation.parameter"
+
