@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [9.0.1.0.2] - 2018-01-12
+### changed
+- Adds new filters in wizard of computation of product rotation, filters for categories and style line of products.
+
 ## [9.0.1.0.1] - 2018-01-02
 ### changed
 - Wizard adds current rotation to each product.

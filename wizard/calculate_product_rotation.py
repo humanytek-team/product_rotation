@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import hashlib
 
 from openerp import api, fields, models, _
+from openerp.exceptions import ValidationError
 
 
 class CalculateProductRotation(models.TransientModel):
@@ -29,6 +30,8 @@ class CalculateProductRotation(models.TransientModel):
                            required=True, default=_get_current_date)
     company_id = fields.Many2one('res.company', 'Company')
     concept_id = fields.Many2one('product.style.concept', 'Concept')
+    category_id = fields.Many2one('product.category', 'Category')
+    line_id = fields.Many2one('product.style.line', 'Line')
     percentage_denied = fields.Float('Percentage denied', default=100)
 
     @api.multi
@@ -46,11 +49,21 @@ class CalculateProductRotation(models.TransientModel):
         ProductRotationParameter = self.env['product.rotation.parameter']
         SaleOrder = self.env['sale.order']
 
+        products_domain = list()
+
         if self.concept_id:
-            products = ProductProduct.search(
-                [('product_style_concept_id', '=', self.concept_id.id)])
-        else:
-            products = ProductProduct.search([])
+            products_domain.append(
+                ('product_style_concept_id', '=', self.concept_id.id))
+
+        if self.category_id:
+            products_domain.append(
+                ('categ_id', '=', self.category_id.id))
+
+        if self.line_id:
+            products_domain.append(
+                ('product_style_line_id', '=', self.line_id.id))
+
+        products = ProductProduct.search(products_domain)
 
         domain_sales = [
             ('order_line.product_id.id', 'in', products.mapped('id')),
@@ -120,6 +133,10 @@ class CalculateProductRotation(models.TransientModel):
 
         total_demand = float(sum([products_rotation[product_id]['demand']
                                   for product_id in products_rotation]))
+
+        if total_demand == 0:
+            raise ValidationError(
+                _('There was no demand for products in this period.'))
 
         for product in products:
 
